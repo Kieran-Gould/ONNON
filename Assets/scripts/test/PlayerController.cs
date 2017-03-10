@@ -10,17 +10,23 @@ public class PlayerController : MonoBehaviour {
 	private Vector3 moveVelocity; 																		// How fast the player is currently moving
 	private Camera mainCamera; 																			// Player camera
 	private GameObject cameraRig;																		// The camera rig which moves along with the player
-	public hudController hud;																			// HUD link
 	public gunController gun;																			// Links the player to the gun controller script
 	public int playerHealth;																			// The player's health
 	private float invunTime = 3;																		// Time the player is invincible after being hit
 	private float invunCounter;																			// The timer which counts down after the player is hit
 	public int playerNumber;																			// Player ID number
+	public GameObject HUD_Object;																		// Reference to the HUD GameObject
 
 	void Start () {
 		myRigidBody = GetComponent<Rigidbody>(); 														// Get player body
 		mainCamera = FindObjectOfType<Camera>(); 														// Get player camera
-		cameraRig = GameObject.Find("Camera Rig");
+
+		if (playerNumber == 1) {
+			cameraRig = GameObject.Find("Camera Rig 1"); 												// Find camera rig for
+		}
+		if (playerNumber == 2) {
+			cameraRig = GameObject.Find("Camera Rig 2");
+		}
 	}
 
 	void OnCollisionEnter(Collision other) {															// If collide with enemy
@@ -33,7 +39,7 @@ public class PlayerController : MonoBehaviour {
 	}
 
 	void Update () {
-		invunCounter -= Time.deltaTime;
+		invunCounter -= Time.deltaTime;																	// Deincriment the invun timer using delta
 
 		if (playerHealth < 1) {																			// If the player is dead and have less than one life, aka zero
 			Debug.Log ("GAME OVER");
@@ -50,7 +56,7 @@ public class PlayerController : MonoBehaviour {
 			Vector3 pointToLook = cameraRay.GetPoint(rayLength); 										// Store where the ray hits in a Vector3
 			transform.LookAt(new Vector3(pointToLook.x, transform.position.y, pointToLook.z)); 			// Look at raycast location
 		}
-		cameraRig.transform.position = myRigidBody.transform.position;									// Move the camera rig to where the player is positioned
+		//cameraRig.transform.position = myRigidBody.transform.position;									// Move the camera rig to where the player is positioned
 
 		if (Input.GetMouseButtonDown (0)) {																// If the left mouse button (0) is held down
 			gun.isFiring = true;																		// Set isFiring to True
@@ -59,6 +65,14 @@ public class PlayerController : MonoBehaviour {
 		if (Input.GetMouseButtonUp (0)) {																// If the left mouse button (0) is released
 			gun.isFiring = false;																		// Set isFiring to False
 		}
+
+		if (playerNumber == 1) {
+			HUD_Object.GetComponent<hudController>().health1 = playerHealth;					// Get reference to the int health variable on the HUD, and assign it to HUD_Ref
+		}
+		if (playerNumber == 2) {
+			HUD_Object.GetComponent<hudController>().health2 = playerHealth;
+		}																		
+
 	}
 
 	void FixedUpdate () {

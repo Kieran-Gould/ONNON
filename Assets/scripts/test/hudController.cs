@@ -6,8 +6,8 @@ public class hudController : MonoBehaviour {
 
 	public Material[] materials;								// List of mateirals to cycle through
 
-	private int health1;										// Health for player 1
-	private int health2;										// Health for player 2
+	public int health1;											// Health for player 1
+	public int health2;											// Health for player 2
 
 	private GameObject heart_1A;
 	private GameObject heart_1B;
@@ -36,6 +36,50 @@ public class hudController : MonoBehaviour {
 	}
 
 	void Update () {
-		heart1A_Rend.material = materials [1];
+			
+		if (health1 == 5) {										// Set HUD materials based on player health
+			heart1A_Rend.material = materials [0];
+			heart1B_Rend.material = materials [0];
+			heart1C_Rend.material = materials [0];
+			heart1D_Rend.material = materials [0];
+			heart1E_Rend.material = materials [0];
+		}
+		if (health1 == 4) {
+			heart1A_Rend.material = materials [0];
+			heart1B_Rend.material = materials [0];
+			heart1C_Rend.material = materials [0];
+			heart1D_Rend.material = materials [0];
+			heart1E_Rend.material = materials [1];
+		}
+		if (health1 == 3) {
+			heart1A_Rend.material = materials [0];
+			heart1B_Rend.material = materials [0];
+			heart1C_Rend.material = materials [0];
+			heart1D_Rend.material = materials [1];
+			heart1E_Rend.material = materials [1];
+		}
+		if (health1 == 2) {
+			heart1A_Rend.material = materials [0];
+			heart1B_Rend.material = materials [0];
+			heart1C_Rend.material = materials [1];
+			heart1D_Rend.material = materials [1];
+			heart1E_Rend.material = materials [1];
+		}
+		if (health1 == 1) {
+			heart1A_Rend.material = materials [0];
+			heart1B_Rend.material = materials [1];
+			heart1C_Rend.material = materials [1];
+			heart1D_Rend.material = materials [1];
+			heart1E_Rend.material = materials [1];
+		}
+		if (health1 == 0) {
+			heart1A_Rend.material = materials [1];
+			heart1B_Rend.material = materials [1];
+			heart1C_Rend.material = materials [1];
+			heart1D_Rend.material = materials [1];
+			heart1E_Rend.material = materials [1];
+		}
+
+
 	}
 }
