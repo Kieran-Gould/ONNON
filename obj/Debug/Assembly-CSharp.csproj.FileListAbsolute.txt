@@ -27,3 +27,5 @@ C:\Users\Maxwell Kepler\Documents\ONNON\Temp\bin\Debug\UnityEngine.HoloLens.xml
 C:\Users\Maxwell Kepler\Documents\ONNON\Temp\bin\Debug\UnityEngine.VR.xml
 C:\Users\Maxwell Kepler\Documents\ONNON\obj\Debug\Assembly-CSharp.dll
 C:\Users\Maxwell Kepler\Documents\ONNON\obj\Debug\Assembly-CSharp.pdb
+C:\Users\Maxwell Kepler\Documents\GitHub\ONNON\obj\Debug\Assembly-CSharp.csprojResolveAssemblyReference.cache
+C:\Users\Maxwell Kepler\Documents\GitHub\ONNON\obj\Debug\Assembly-CSharp.dll

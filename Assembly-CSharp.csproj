@@ -46,12 +46,29 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\materials\player\camera\pixelFilter.cs" />
      <Compile Include="Assets\scripts\test\BulletController.cs" />
      <Compile Include="Assets\scripts\test\PlayerController.cs" />
      <Compile Include="Assets\scripts\test\cameraController.cs" />
      <Compile Include="Assets\scripts\test\enemyController.cs" />
      <Compile Include="Assets\scripts\test\gunController.cs" />
      <Compile Include="Assets\scripts\test\hudController.cs" />
+     <Compile Include="Assets\scripts\test\rotateObject.cs" />
+     <Compile Include="Assets\shader\Billboard\billboard.cs" />
+     <Compile Include="Assets\shader\imageEffects\cPrecision.cs" />
+     <None Include="Assets\shader\psx-unlit.shader" />
+     <None Include="Assets\shader\psx-unlit_noambient.shader" />
+     <None Include="Assets\shader\Reflective\psx-unlit-mult.shader" />
+     <None Include="Assets\shader\Trasparent\psx-trasparent-unlit-noambient.shader" />
+     <None Include="Assets\shader\Trasparent\psx-trasparent-unlit.shader" />
+     <None Include="Assets\shader\Resources\cPrecision.shader" />
+     <None Include="Assets\shader\Reflective\psx-unlit-add.shader" />
+     <None Include="Assets\shader\Reflective\psx-vertexlit-mult.shader" />
+     <None Include="Assets\shader\Reflective\psx-unlit_noambient-mult.shader" />
+     <None Include="Assets\shader\psx-vertexlit.shader" />
+     <None Include="Assets\shader\Reflective\psx-unlit_noambient-add.shader" />
+     <None Include="Assets\shader\Reflective\psx-vertexlit-add.shader" />
+     <None Include="Assets\shader\Trasparent\psx-trasparent-vertexlit.shader" />
  <Reference Include="UnityEngine.UI">
  <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
  </Reference>

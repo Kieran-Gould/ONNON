@@ -72,7 +72,6 @@ public class PlayerController : MonoBehaviour {
 		if (playerNumber == 2) {
 			HUD_Object.GetComponent<hudController>().health2 = playerHealth;
 		}																		
-
 	}
 
 	void FixedUpdate () {
